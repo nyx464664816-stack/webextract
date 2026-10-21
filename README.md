@@ -31,15 +31,15 @@ Behaviour:
 
 ## Pricing
 
-- **Free:** 50 calls/day per IP, no key, no signup.
+- **Free:** 50 calls/day per IP, no key, no signup. REST: opt in with the header `X-Billing: free` (or `?free=1`). MCP: no header needed.
 - **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed.
 - **Prepaid packs (card, via Stripe Checkout):** $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
 
 ## Quick start
 
 ```sh
-# Free tier
-curl "https://api.webextract.dev/v1/markdown?url=https://example.com"
+# Free tier (opt-in: 50 calls/day per IP)
+curl -H "X-Billing: free" "https://api.webextract.dev/v1/markdown?url=https://example.com"
 
 # Prepaid key (Stripe)
 curl -H "Authorization: Bearer $WEBEXTRACT_KEY" \
@@ -58,11 +58,11 @@ Response (abridged):
 }
 ```
 
-Prepaid responses include `X-Credits-Charged` and `X-Credits-Remaining` headers; free-tier responses include `X-Free-Remaining`.
+Prepaid responses include `X-Credits-Charged` and `X-Credits-Remaining` headers; free-tier responses (only with `X-Billing: free` / `?free=1`) include `X-Free-Remaining`. Without a key, a payment or `X-Billing: free`, the REST endpoints answer HTTP 402 (`reason: x402_required`).
 
 ## Pay per call with x402
 
-Requests without a key and without free calls left (or with `X-Billing: x402`) get **HTTP 402** with an x402 v2 `PAYMENT-REQUIRED` header (scheme `exact`). It lists one option per network; pay with whichever one your wallet holds USDC on (see [Choosing a network with the SDK](#choosing-a-network-with-the-sdk)):
+Requests without a key, payment or `X-Billing: free` get **HTTP 402** (`reason: x402_required`; `X-Billing: x402` gives the same 402 with `reason: x402_requested`) with an x402 v2 `PAYMENT-REQUIRED` header (scheme `exact`). It lists one option per network; pay with whichever one your wallet holds USDC on (see [Choosing a network with the SDK](#choosing-a-network-with-the-sdk)):
 
 | Network | CAIP-2 id | USDC (native) | EIP-712 name / version |
 | --- | --- | --- | --- |
@@ -80,10 +80,14 @@ The JSON body of every 402 says why, in `reason` (also in the `X-Payment-Reason`
 
 | `reason` | Meaning |
 | --- | --- |
+| `x402_required` | No key, no payment and no free opt-in. Pay with x402, use a key, or retry with `X-Billing: free` |
 | `x402_requested` | You sent `X-Billing: x402` and no payment yet |
-| `free_limit_reached` | Free calls for your IP are used up |
-| `invalid_payment` | A payment was sent but rejected; `detail` has the facilitator's reason (e.g. `invalid_exact_evm_insufficient_balance`). Not charged |
+| `free_limit_reached` | You opted in with `X-Billing: free` / `?free=1` but your IP's free calls are used up (`X-Free-Remaining: 0`) |
+| `invalid_payment` | A payment was sent but rejected; `detail` has a short reason code (e.g. `invalid_exact_evm_insufficient_balance`). Not charged |
 | `unsupported_network` | The payment used a network this endpoint does not accept |
+| `settlement_failed` | The payment was verified but on-chain settlement did not complete. Not charged (`retryable: true`); retry with a freshly signed payment |
+
+An unknown `X-Billing` value returns 400 `invalid_billing_mode`. Precedence: a Bearer key wins over a payment, and a payment wins over `X-Billing: free`.
 
 See the requirements without paying anything: [`examples/curl/x402-inspect.sh`](examples/curl/x402-inspect.sh), [`examples/python/inspect_402.py`](examples/python/inspect_402.py) or [`examples/node/inspect-402.mjs`](examples/node/inspect-402.mjs).
 
@@ -140,7 +144,7 @@ Tools:
 - `extract_url(url)`: Markdown + structured JSON
 - `page_markdown(url)`: Markdown only (cheaper)
 
-Works without a key on the free tier. For prepaid credits add header `Authorization: Bearer <key>`.
+Works without a key on the free tier (50 calls/day per IP, no `X-Billing` header needed for MCP). For prepaid credits add header `Authorization: Bearer <key>`.
 
 Both tools declare an `outputSchema` and return `structuredContent`. MCP calls use the free tier or a Bearer key; for pay-per-call without an account use the REST endpoints with x402.
 
