@@ -6,7 +6,7 @@ BASE = os.environ.get("WEBEXTRACT_BASE", "https://api.webextract.dev")
 endpoint = sys.argv[1] if len(sys.argv) > 1 else "extract"
 target = sys.argv[2] if len(sys.argv) > 2 else "https://example.com"
 
-# X-Billing: x402 skips the free tier so we always get the 402 (otherwise the first 50 calls/day are free).
+# Without a key, payment or X-Billing: free the API always answers 402; X-Billing: x402 just makes it explicit.
 r = httpx.get(f"{BASE}/v1/{endpoint}", params={"url": target}, headers={"X-Billing": "x402"}, timeout=30)
 print("HTTP", r.status_code)
 if r.status_code != 402:
@@ -16,4 +16,4 @@ print(f"x402Version={pr.x402_version} resource={pr.resource.url}")
 for a in pr.accepts:
     print(f"  {a.scheme:5} {a.network:13} amount={a.amount:>5} (= ${int(a.amount)/1e6:.3f}) asset={a.asset} payTo={a.pay_to} extra={a.extra}")
 body = r.json()
-print("reason:", body.get("reason"), "| message:", body.get("message"))  # x402_requested | free_limit_reached | invalid_payment | unsupported_network
+print("reason:", body.get("reason"), "| message:", body.get("message"))  # x402_required | x402_requested | free_limit_reached | invalid_payment | unsupported_network | settlement_failed
