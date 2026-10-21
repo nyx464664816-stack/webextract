@@ -71,7 +71,7 @@ const fetchWithPayment = wrapFetchWithPaymentFromConfig(fetch, {
   paymentRequirementsSelector: selector,
   spendControls: { allowedAssets },
 });
-const res = await fetchWithPayment(ENDPOINT, { headers: { "X-Billing": SANDBOX ? "x402-testnet" : "x402" } }); // skip the free tier
+const res = await fetchWithPayment(ENDPOINT, { headers: { "X-Billing": SANDBOX ? "x402-testnet" : "x402" } }); // optional for mainnet (a bare request already gets the 402); required for the sandbox
 console.log(res.status, res.headers.get("PAYMENT-RESPONSE") ? "(paid)" : "");
 const body = await res.json();
 console.log(res.status === 402 ? `${body.reason}: ${body.message}` : body);
