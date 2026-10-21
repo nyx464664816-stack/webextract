@@ -1,1 +1,7 @@
-x
+{
+  "mcpServers": {
+    "webextract": {
+      "url": "https://api.webextract.dev/mcp"
+    }
+  }
+}

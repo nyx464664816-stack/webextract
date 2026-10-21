@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "webextract": {
+      "url": "https://api.webextract.dev/mcp",
+      "headers": { "Authorization": "Bearer ${env:WEBEXTRACT_KEY}" }
+    }
+  }
+}

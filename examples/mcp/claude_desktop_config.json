@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "webextract": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://api.webextract.dev/mcp", "--transport", "http-only"]
+    }
+  }
+}
