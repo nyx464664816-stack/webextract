@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "webextract": {
+      "type": "streamableHttp",
+      "url": "https://api.webextract.dev/mcp",
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

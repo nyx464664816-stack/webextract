@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "webextract": {
+      "type": "http",
+      "url": "https://api.webextract.dev/mcp"
+    }
+  }
+}
