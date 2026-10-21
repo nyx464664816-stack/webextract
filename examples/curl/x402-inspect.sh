@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Get the x402 payment requirements WITHOUT paying anything.
-# `X-Billing: x402` skips the free tier so the server answers 402 + PAYMENT-REQUIRED (x402 v2, base64 JSON).
+# The server answers 402 + PAYMENT-REQUIRED (x402 v2, base64 JSON) to any request without a key, payment or X-Billing: free;
+# `X-Billing: x402` makes that explicit (reason x402_requested).
 # Usage: ./x402-inspect.sh [extract|markdown] [url]
 # Sandbox (Base Sepolia test USDC only): WEBEXTRACT_BILLING=x402-testnet ./x402-inspect.sh
 set -euo pipefail
