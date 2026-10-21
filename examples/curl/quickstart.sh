@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# WebExtract curl quickstart. Free tier: 50 calls/day per IP, no key.
+# WebExtract curl quickstart. Free tier: 50 calls/day per IP, no key; opt in with the header X-Billing: free.
+# (Without a key, a payment or X-Billing: free, the REST API answers 402 x402_required.)
 # Usage: ./quickstart.sh [url]       (set WEBEXTRACT_KEY to use prepaid credits)
 set -euo pipefail
 BASE="${WEBEXTRACT_BASE:-https://api.webextract.dev}"
 TARGET="${1:-https://example.com}"
-AUTH=(); [ -n "${WEBEXTRACT_KEY:-}" ] && AUTH=(-H "Authorization: Bearer ${WEBEXTRACT_KEY}")
+AUTH=(-H "X-Billing: free"); [ -n "${WEBEXTRACT_KEY:-}" ] && AUTH=(-H "Authorization: Bearer ${WEBEXTRACT_KEY}")
 
 echo "== balance (free calls left today, or prepaid credits)"
 curl -sS "${AUTH[@]}" "$BASE/v1/balance"; echo
