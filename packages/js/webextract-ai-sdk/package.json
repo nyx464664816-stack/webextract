@@ -1,0 +1,66 @@
+{
+  "name": "@webextract/ai-sdk",
+  "version": "0.1.0",
+  "description": "Vercel AI SDK tools for WebExtract: extractUrl (Markdown + product/price/tables JSON) and pageMarkdown. Pay per call with x402, prepaid key, or free tier.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.3"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "ai-sdk",
+    "vercel-ai",
+    "ai",
+    "tools",
+    "webextract",
+    "web-scraping",
+    "markdown",
+    "x402"
+  ],
+  "homepage": "https://webextract.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyx464664816-stack/webextract.git",
+    "directory": "packages/js/webextract-ai-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/nyx464664816-stack/webextract/issues"
+  },
+  "license": "MIT",
+  "author": "TAINCHENG, L.L.C.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@webextract/sdk": "^0.1.0"
+  },
+  "peerDependencies": {
+    "ai": "^5.0.0 || ^6.0.0 || ^7.0.0",
+    "zod": "^3.25.76 || ^4.1.8"
+  },
+  "devDependencies": {
+    "ai": "^7.0.148",
+    "zod": "^4.1.8",
+    "typescript": "^5.9.3",
+    "@types/node": "^20"
+  }
+}

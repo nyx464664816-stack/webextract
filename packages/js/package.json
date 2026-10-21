@@ -1,0 +1,19 @@
+{
+  "name": "webextract-js-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "webextract",
+    "webextract-ai-sdk",
+    "langchain-webextract"
+  ],
+  "scripts": {
+    "build": "npm run build -w @webextract/sdk -w @webextract/ai-sdk -w @webextract/langchain",
+    "test": "npm test -w @webextract/sdk -w @webextract/ai-sdk -w @webextract/langchain"
+  },
+  "devDependencies": {
+    "@x402/fetch": "2.28.0",
+    "@x402/evm": "2.28.0",
+    "viem": "^2.57.7"
+  }
+}
