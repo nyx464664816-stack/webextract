@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-webextract"
+version = "0.1.0"
+description = "LangChain tools for WebExtract: extract_url (Markdown + product/price/tables JSON) and page_markdown. Pay per call with x402, prepaid key, or free tier."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "TAINCHENG, L.L.C." }]
+keywords = ["langchain", "tools", "webextract", "web-scraping", "markdown", "x402"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: Internet :: WWW/HTTP",
+  "Typing :: Typed",
+]
+dependencies = ["webextract-sdk>=0.1.0,<0.2", "langchain-core>=0.3,<2"]
+
+
+[project.urls]
+Homepage = "https://webextract.dev"
+Documentation = "https://webextract.dev/docs"
+Source = "https://github.com/nyx464664816-stack/webextract"
+Issues = "https://github.com/nyx464664816-stack/webextract/issues"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/langchain_webextract", "tests/**/*.py", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_webextract"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[dependency-groups]
+test = ["pytest>=8", "pytest-asyncio>=0.23", "pytest-socket>=0.7", "langchain-tests>=1.1,<2"]
+test_integration = ["x402[evm,httpx,requests]>=2.25,<3"]

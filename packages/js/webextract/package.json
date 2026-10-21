@@ -1,0 +1,25 @@
+{
+  "name": "@webextract/sdk",
+  "version": "0.1.0",
+  "description": "Thin client for the WebExtract API: web page to clean Markdown + fixed-schema JSON for AI agents. Prepaid key, free tier, or pay per call with x402 (USDC on Base and 6 other chains).",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }, "./package.json": "./package.json" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": { "node": ">=20.3" },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": ["webextract", "web-scraping", "markdown", "extraction", "ai-agents", "llm", "x402", "mcp"],
+  "homepage": "https://webextract.dev",
+  "repository": { "type": "git", "url": "git+https://github.com/nyx464664816-stack/webextract.git", "directory": "packages/js/webextract" },
+  "bugs": { "url": "https://github.com/nyx464664816-stack/webextract/issues" },
+  "license": "MIT",
+  "author": "TAINCHENG, L.L.C.",
+  "publishConfig": { "access": "public" },
+  "devDependencies": { "typescript": "^5.9.3", "@types/node": "^20" }
+}

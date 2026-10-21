@@ -1,0 +1,46 @@
+# Publishes the npm packages @webextract/sdk, @webextract/ai-sdk, @webextract/langchain
+# (directories js/webextract, js/webextract-ai-sdk, js/langchain-webextract) with npm
+# Trusted Publishing (OIDC, no NPM_TOKEN). Provenance is generated automatically.
+# Requirements (npm docs): npm CLI >= 11.5.1, Node >= 22.14, GitHub-hosted runner,
+# package.json repository.url == https://github.com/nyx464664816-stack/webextract.
+# Each package must already exist on npm (first publish is manual, by a human with 2FA)
+# and have a Trusted Publisher configured with workflow filename "publish-npm.yml"
+# and environment "npm".
+name: publish-npm
+on:
+  push:
+    tags: ["js-v*"]          # e.g. js-v0.1.1 ; versions come from each package.json
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm         # GitHub environment: add required reviewers there for a manual gate
+    permissions:
+      contents: read
+      id-token: write        # required for OIDC
+    defaults:
+      run:
+        working-directory: packages/js
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false   # never cache in release builds
+      - run: npm install -g npm@^11.5.1
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      # Publish in dependency order; skip versions that already exist.
+      - name: publish
+        run: |
+          set -euo pipefail
+          for p in webextract webextract-ai-sdk langchain-webextract; do   # directory names
+            n=$(node -p "require('./$p/package.json').name")
+            v=$(node -p "require('./$p/package.json').version")
+            if npm view "$n@$v" version >/dev/null 2>&1; then echo "skip $n@$v (already published)"; continue; fi
+            (cd "$p" && npm publish --access public)
+          done

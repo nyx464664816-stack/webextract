@@ -1,0 +1,49 @@
+# Publishes the PyPI projects webextract-sdk (import name: webextract; dir packages/python/webextract) and langchain-webextract with PyPI Trusted Publishing (OIDC).
+# No API token. Works for the very first upload if a "pending publisher" was registered on PyPI.
+# PyPI fields for EACH project: owner nyx464664816-stack, repository webextract,
+# workflow publish-pypi.yml, environment pypi-sdk (webextract-sdk) / pypi (langchain-webextract).
+# PyPI rejects two pending publishers with identical settings, so each project has its own environment.
+name: publish-pypi
+on:
+  push:
+    tags: ["py-v*"]          # e.g. py-v0.1.0 ; versions come from each pyproject.toml
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.12" }
+      - run: python -m pip install --upgrade build twine pytest pytest-asyncio pytest-socket "langchain-tests>=1.1,<2"
+      - run: pip install -e packages/python/webextract -e packages/python/langchain-webextract
+      - run: pytest -q --disable-socket --allow-unix-socket packages/python/webextract/tests
+      - run: cd packages/python/langchain-webextract && pytest -q --disable-socket --allow-unix-socket tests/unit_tests tests/integration_tests
+      - run: |
+          python -m build packages/python/webextract --outdir dist/webextract
+          python -m build packages/python/langchain-webextract --outdir dist/langchain-webextract
+          twine check dist/*/*
+      - uses: actions/upload-artifact@v4
+        with: { name: dists, path: dist/ }
+  publish-webextract-sdk:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi-sdk
+    permissions: { id-token: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: dists, path: dist/ }
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with: { packages-dir: dist/webextract/, skip-existing: true }
+  publish-langchain-webextract:
+    needs: publish-webextract-sdk      # depends on webextract-sdk being on PyPI
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions: { id-token: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: dists, path: dist/ }
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with: { packages-dir: dist/langchain-webextract/, skip-existing: true }

@@ -1,0 +1,65 @@
+{
+  "name": "@webextract/langchain",
+  "version": "0.1.0",
+  "description": "LangChain.js tools for WebExtract: extract_url (Markdown + product/price/tables JSON) and page_markdown. Pay per call with x402, prepaid key, or free tier.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.3"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "langchain",
+    "langchainjs",
+    "tools",
+    "webextract",
+    "web-scraping",
+    "markdown",
+    "x402"
+  ],
+  "homepage": "https://webextract.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyx464664816-stack/webextract.git",
+    "directory": "packages/js/langchain-webextract"
+  },
+  "bugs": {
+    "url": "https://github.com/nyx464664816-stack/webextract/issues"
+  },
+  "license": "MIT",
+  "author": "TAINCHENG, L.L.C.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@webextract/sdk": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@langchain/core": "^0.3.0 || ^1.0.0",
+    "zod": "^3.25.76 || ^4.1.8"
+  },
+  "devDependencies": {
+    "@langchain/core": "^1.2.20",
+    "zod": "^4.1.8",
+    "typescript": "^5.9.3",
+    "@types/node": "^20"
+  }
+}
