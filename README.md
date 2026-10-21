@@ -33,7 +33,7 @@ Behaviour:
 
 - **Free:** 50 calls/day per IP, no key, no signup. REST: opt in with the header `X-Billing: free` (or `?free=1`). MCP: no header needed.
 - **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed.
-- **Prepaid packs (card, via Stripe Checkout):** $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
+- **Prepaid packs (card, via Stripe Checkout), from $1:** $1 = 200 credits · $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. `/v1/extract` uses 1 credit, `/v1/markdown` uses 0.4 credit. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
 
 ## Quick start
 
