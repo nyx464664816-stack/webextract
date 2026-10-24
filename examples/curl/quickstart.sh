@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# WebExtract curl quickstart. Free tier: 50 calls/day per IP, no key; opt in with the header X-Billing: free.
+# WebExtract curl quickstart. Free tier: 20 calls/day per IP, no key; opt in with the header X-Billing: free.
 # (Without a key, a payment or X-Billing: free, the REST API answers 402 x402_required.)
 # Usage: ./quickstart.sh [url]       (set WEBEXTRACT_KEY to use prepaid credits)
 set -euo pipefail

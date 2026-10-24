@@ -9,7 +9,7 @@ npm i @webextract/sdk
 ```ts
 import { WebExtract, PaymentRequiredError, TargetFetchError } from "@webextract/sdk";
 
-const we = new WebExtract();                       // free tier: X-Billing: free, 50 calls/day per IP
+const we = new WebExtract();                       // free tier: X-Billing: free, 20 calls/day per IP
 const { data, meta } = await we.extract("https://web-scraping.dev/product/1");
 console.log(data.product?.price_detail, meta.freeRemaining);
 ```
@@ -18,7 +18,7 @@ console.log(data.product?.price_detail, meta.freeRemaining);
 
 | Mode | Option | Cost |
 |---|---|---|
-| Free tier (default) | nothing (and no `WEBEXTRACT_API_KEY` set), or `billing: "free"` | 50 calls/day per IP (shared with MCP) |
+| Free tier (default) | nothing (and no `WEBEXTRACT_API_KEY` set), or `billing: "free"` | 20 calls/day per IP (shared with MCP) |
 | Prepaid credits | `apiKey: "lx_..."` or env `WEBEXTRACT_API_KEY` → `Authorization: Bearer` | `/v1/extract` 1 credit, `/v1/markdown` 0.4 credit. Buy at https://webextract.dev/#pricing |
 | x402 pay per call | `paymentFetch` (default billing `"x402"`) | `/v1/extract` $0.005, `/v1/markdown` $0.002 in USDC on Base and 6 other chains |
 | x402 sandbox | `paymentFetch` + `billing: "x402-testnet"` | Base Sepolia **test** USDC only. Nothing real is charged |

@@ -31,14 +31,14 @@ Behaviour:
 
 ## Pricing
 
-- **Free:** 50 calls/day per IP, no key, no signup. REST: opt in with the header `X-Billing: free` (or `?free=1`). MCP: no header needed.
+- **Free:** 20 calls/day per IP, no key, no signup. REST: opt in with the header `X-Billing: free` (or `?free=1`). MCP: no header needed.
 - **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed.
 - **Prepaid packs (card, via Stripe Checkout), from $1:** $1 = 200 credits · $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. `/v1/extract` uses 1 credit, `/v1/markdown` uses 0.4 credit. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
 
 ## Quick start
 
 ```sh
-# Free tier (opt-in: 50 calls/day per IP)
+# Free tier (opt-in: 20 calls/day per IP)
 curl -H "X-Billing: free" "https://api.webextract.dev/v1/markdown?url=https://example.com"
 
 # Prepaid key (Stripe)
@@ -144,7 +144,7 @@ Tools:
 - `extract_url(url)`: Markdown + structured JSON
 - `page_markdown(url)`: Markdown only (cheaper)
 
-Works without a key on the free tier (50 calls/day per IP, no `X-Billing` header needed for MCP). For prepaid credits add header `Authorization: Bearer <key>`.
+Works without a key on the free tier (20 calls/day per IP, no `X-Billing` header needed for MCP). For prepaid credits add header `Authorization: Bearer <key>`.
 
 Both tools declare an `outputSchema` and return `structuredContent`. MCP calls use the free tier or a Bearer key; for pay-per-call without an account use the REST endpoints with x402.
 

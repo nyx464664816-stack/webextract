@@ -13,7 +13,7 @@ The PyPI name is `webextract-sdk`; the import name is `webextract` (`from webext
 
 | Mode | How | Cost |
 |---|---|---|
-| Free tier (default) | `WebExtract()` sends `X-Billing: free` (when `WEBEXTRACT_API_KEY` is not set) | 50 calls/day per IP (shared with MCP) |
+| Free tier (default) | `WebExtract()` sends `X-Billing: free` (when `WEBEXTRACT_API_KEY` is not set) | 20 calls/day per IP (shared with MCP) |
 | Prepaid credits | `WebExtract(api_key="lx_...")` or env `WEBEXTRACT_API_KEY` → `Authorization: Bearer` | `/v1/extract` 1 credit, `/v1/markdown` 0.4 credit. Buy at https://webextract.dev/#pricing |
 | x402 pay per call | `AsyncWebExtract(payment_client=x402HttpxClient(...))` | `/v1/extract` $0.005, `/v1/markdown` $0.002 in USDC on Base and 6 other chains |
 | x402 sandbox | add `billing="x402-testnet"` | Base Sepolia **test** USDC only. Nothing real is charged |

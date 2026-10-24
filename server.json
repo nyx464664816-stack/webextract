@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "dev.webextract/extract",
   "title": "WebExtract",
-  "description": "Web page to clean Markdown or fixed-schema JSON (product/price, tables). Free 50 calls/day.",
-  "version": "1.0.1",
+  "description": "Web page to clean Markdown or fixed-schema JSON (product/price, tables). Free 20 calls/day.",
+  "version": "1.0.3",
   "websiteUrl": "https://webextract.dev",
   "remotes": [
     { "type": "streamable-http", "url": "https://api.webextract.dev/mcp",
