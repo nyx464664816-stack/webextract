@@ -1,0 +1,106 @@
+{
+  "service": "WebExtract",
+  "ok": true,
+  "checked_at_utc": "2026-10-24T13:28:42Z",
+  "checks": [
+    {
+      "name": "Website",
+      "url": "https://webextract.dev/",
+      "ok": true,
+      "status": 200,
+      "ms": 673,
+      "detail": ""
+    },
+    {
+      "name": "API health",
+      "url": "https://api.webextract.dev/health",
+      "ok": true,
+      "status": 200,
+      "ms": 609,
+      "detail": "",
+      "networks": [
+        "Base",
+        "Polygon",
+        "Arbitrum",
+        "Avalanche",
+        "Optimism",
+        "World Chain",
+        "Monad"
+      ]
+    },
+    {
+      "name": "/v1/extract (x402)",
+      "url": "https://api.webextract.dev/v1/extract",
+      "status": 402,
+      "ms": 525,
+      "ok": true,
+      "detail": "",
+      "reason": "x402_required",
+      "networks": [
+        "Optimism",
+        "Polygon",
+        "Monad",
+        "Arbitrum",
+        "Avalanche",
+        "World Chain",
+        "Base"
+      ]
+    },
+    {
+      "name": "/v1/markdown (x402)",
+      "url": "https://api.webextract.dev/v1/markdown",
+      "status": 402,
+      "ms": 531,
+      "ok": true,
+      "detail": "",
+      "reason": "x402_required",
+      "networks": [
+        "Optimism",
+        "Polygon",
+        "Monad",
+        "Arbitrum",
+        "Avalanche",
+        "World Chain",
+        "Base"
+      ]
+    },
+    {
+      "name": "MCP endpoint",
+      "url": "https://api.webextract.dev/mcp",
+      "ok": true,
+      "status": 200,
+      "ms": 524,
+      "detail": ""
+    },
+    {
+      "name": "OpenAPI spec",
+      "url": "https://api.webextract.dev/openapi.json",
+      "ok": true,
+      "status": 200,
+      "ms": 682,
+      "detail": ""
+    },
+    {
+      "name": "x402 discovery",
+      "url": "https://api.webextract.dev/.well-known/x402",
+      "ok": true,
+      "status": 200,
+      "ms": 209,
+      "detail": ""
+    },
+    {
+      "name": "TLS api.webextract.dev",
+      "ok": true,
+      "days_left": 86,
+      "expires_utc": "2027-01-19T05:36:51+00:00",
+      "detail": ""
+    },
+    {
+      "name": "TLS webextract.dev",
+      "ok": true,
+      "days_left": 86,
+      "expires_utc": "2027-01-19T05:36:51+00:00",
+      "detail": ""
+    }
+  ]
+}
