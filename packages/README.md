@@ -1,4 +1,6 @@
-# WebExtract SDK packages (npm: published 0.1.0; PyPI: not published yet)
+# WebExtract SDK packages (npm and PyPI: published 0.1.1)
+
+Published: npm `@webextract/sdk`, `@webextract/ai-sdk`, `@webextract/langchain` 0.1.0 on 2026-10-21 (20:38–20:47 KST, manual) and 0.1.1 on 2026-10-25 (04:31–04:32 KST, `publish-npm.yml` with provenance); PyPI `webextract-sdk`, `langchain-webextract` 0.1.0 on 2026-10-21 (21:04–21:05 KST) and 0.1.1 on 2026-10-25 (04:03 KST), both via `publish-pypi.yml`.
 
 | Registry | Package | Directory | What it is | Runtime deps |
 |---|---|---|---|---|
@@ -22,4 +24,4 @@ cd python && .venv/bin/python -m pytest -q --disable-socket --allow-unix-socket 
 ./check-artifacts.sh                                         # lists every file in dist-local/*, fails on secrets/.env/HTML
 ```
 
-Smoke tests (real network) are described in `SMOKE-RESULTS.md`. Publishing is covered in `PUBLISHING.md`, and the workflow drafts are in `ci/.github/workflows/`. The review of the distribution plan is in `REVIEW-npm-package-plan.md`.
+Publishing is covered in `PUBLISHING.md`, and the release workflows are `.github/workflows/publish-npm.yml` and `.github/workflows/publish-pypi.yml` at the repo root.

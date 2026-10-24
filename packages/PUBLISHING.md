@@ -1,6 +1,6 @@
 # Publishing checklist
 
-**Status (checked 2026-10-21 ~20:55 KST, read-only):** npm `@webextract/sdk`, `@webextract/ai-sdk`, `@webextract/langchain` **0.1.0 are published** (`latest` = 0.1.0, first published 20:38 / 20:39 / 20:47 KST; each also has the `0.0.0-stage` placeholder that staged publishing creates; registry tarballs are byte-identical to `dist-local/`). PyPI: **nothing published yet** (`webextract-sdk`, `langchain-webextract`). npm Trusted Publisher (§2) and GitHub workflows (§0) are not set up yet.
+**Status (updated 2026-10-25 ~04:40 KST from the npm registry, PyPI and the repo's Actions runs, read-only):** npm `@webextract/sdk`, `@webextract/ai-sdk`, `@webextract/langchain` are published at **0.1.0** (2026-10-21, 20:38 / 20:39 / 20:47 KST, by hand) and **0.1.1** (2026-10-25, 04:31–04:32 KST, by `publish-npm.yml` through npm Trusted Publisher with provenance; `latest` = 0.1.1; each package also has the `0.0.0-stage` placeholder that staged publishing creates). PyPI `webextract-sdk` and `langchain-webextract` are published at **0.1.0** (2026-10-21, 21:04 / 21:05 KST) and **0.1.1** (2026-10-25, 04:03 KST, by `publish-pypi.yml`). npm Trusted Publisher (§2) is set up, and the workflows (§0) are in the repo's `.github/workflows/`. The checklist items below are the original first-publish plan and have not been re-ticked.
 
 Decided by 来禄: accounts registered with the company email, and **the boss does the first publish**.
 
@@ -9,7 +9,7 @@ Decided by 来禄: accounts registered with the company email, and **the boss do
 
 ## 0. Before any publish (repo maintainer)
 1. [ ] Copy `packages/` into the repo `nyx464664816-stack/webextract` at `packages/` (keep `js/`, `python/`). Leave out `dist-local/`, `node_modules/` and `.venv/` (see `.gitignore`).
-2. [ ] Copy `ci/.github/workflows/publish-npm.yml` and `publish-pypi.yml` into the repo's `.github/workflows/`.
+2. [ ] Make sure `publish-npm.yml` and `publish-pypi.yml` are in the repo's `.github/workflows/` (they are there now; the old `ci/` staging folder no longer exists).
 3. [ ] The repo must be **public**, otherwise npm won't generate provenance. Every package.json has `repository.url = git+https://github.com/nyx464664816-stack/webextract.git`, and npm requires an exact match.
 4. [ ] 🔐 GitHub → Settings → Environments: create `npm`, `pypi-sdk` and `pypi`. Optionally add required reviewers (the boss) as a manual gate.
 5. [ ] npm names: done (published 0.1.0). PyPI: check again that https://pypi.org/project/webextract-sdk/ and https://pypi.org/project/langchain-webextract/ still return 404. A PyPI pending publisher does **not** reserve a name.
