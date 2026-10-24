@@ -8,9 +8,9 @@ TARGET_FETCH_CODES = frozenset({
 })
 
 PAYMENT_HINTS: Dict[str, str] = {
-    "x402_required": 'No API key, payment or free opt-in. Use billing="free" (50 calls/day per IP), an api_key (https://webextract.dev/#pricing), or a payment_client from the x402 SDK.',
+    "x402_required": 'No API key, payment or free opt-in. Use billing="free" (20 calls/day per IP), an api_key (https://webextract.dev/#pricing), or a payment_client from the x402 SDK.',
     "x402_requested": "x402 requested. Pass a payment_client (e.g. x402HttpxClient) so one of the PAYMENT-REQUIRED options can be signed.",
-    "free_limit_reached": "Free daily limit (50 calls/day per IP, shared with MCP) is used up. Buy credits at https://webextract.dev/#pricing or pay per call via x402 (USDC on Base and 6 other chains).",
+    "free_limit_reached": "Free daily limit (20 calls/day per IP, shared with MCP) is used up. Buy credits at https://webextract.dev/#pricing or pay per call via x402 (USDC on Base and 6 other chains).",
     "invalid_payment": "The x402 payment was rejected. Check the signer, network and USDC balance, then retry with a new payment.",
     "unsupported_network": "The payment used a network/asset this endpoint does not accept. See `networks`.",
     "settlement_failed": "Payment verified but settlement did not complete. Not charged. Retry with a freshly signed payment.",

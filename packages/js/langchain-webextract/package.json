@@ -1,6 +1,6 @@
 {
   "name": "@webextract/langchain",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "LangChain.js tools for WebExtract: extract_url (Markdown + product/price/tables JSON) and page_markdown. Pay per call with x402, prepaid key, or free tier.",
   "type": "module",
   "main": "./dist/index.js",
@@ -50,7 +50,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@webextract/sdk": "^0.1.0"
+    "@webextract/sdk": "^0.1.1"
   },
   "peerDependencies": {
     "@langchain/core": "^0.3.0 || ^1.0.0",

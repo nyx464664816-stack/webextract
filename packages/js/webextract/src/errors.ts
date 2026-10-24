@@ -91,9 +91,9 @@ export const TARGET_FETCH_CODES = new Set([
 ]);
 
 export const PAYMENT_HINTS: Record<string, string> = {
-  x402_required: "No API key, payment or free opt-in. Use billing \"free\" (50 calls/day per IP), an apiKey (https://webextract.dev/#pricing), or a paymentFetch from @x402/fetch.",
+  x402_required: "No API key, payment or free opt-in. Use billing \"free\" (20 calls/day per IP), an apiKey (https://webextract.dev/#pricing), or a paymentFetch from @x402/fetch.",
   x402_requested: "x402 requested. Pass a paymentFetch (e.g. wrapFetchWithPayment from @x402/fetch) so the client can sign one of the PAYMENT-REQUIRED options.",
-  free_limit_reached: "Free daily limit (50 calls/day per IP, shared with MCP) is used up. Buy credits at https://webextract.dev/#pricing or pay per call via x402 (USDC on Base and 6 other chains).",
+  free_limit_reached: "Free daily limit (20 calls/day per IP, shared with MCP) is used up. Buy credits at https://webextract.dev/#pricing or pay per call via x402 (USDC on Base and 6 other chains).",
   invalid_payment: "The x402 payment was rejected. Check the signer, network and USDC balance, then retry with a new payment.",
   unsupported_network: "The payment used a network/asset this endpoint does not accept. See `networks`.",
   settlement_failed: "Payment verified but settlement did not complete. Not charged. Retry with a freshly signed payment.",

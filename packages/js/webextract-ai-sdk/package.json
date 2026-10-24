@@ -1,6 +1,6 @@
 {
   "name": "@webextract/ai-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vercel AI SDK tools for WebExtract: extractUrl (Markdown + product/price/tables JSON) and pageMarkdown. Pay per call with x402, prepaid key, or free tier.",
   "type": "module",
   "main": "./dist/index.js",
@@ -51,7 +51,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@webextract/sdk": "^0.1.0"
+    "@webextract/sdk": "^0.1.1"
   },
   "peerDependencies": {
     "ai": "^5.0.0 || ^6.0.0 || ^7.0.0",

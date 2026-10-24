@@ -16,7 +16,7 @@ from ._errors import (
     TargetFetchError, TARGET_FETCH_CODES, WebExtractError,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 ENV_API_KEY = "WEBEXTRACT_API_KEY"
 DEFAULT_BASE_URL = "https://api.webextract.dev"
 Billing = Literal["key", "free", "x402", "x402-testnet"]

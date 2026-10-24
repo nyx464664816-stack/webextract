@@ -4,7 +4,7 @@ import {
 } from "./errors.js";
 import type { Billing, ExtractResult, MarkdownResult, BalanceResult, ResponseMeta, WebExtractResponse } from "./types.js";
 
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 export const DEFAULT_BASE_URL = "https://api.webextract.dev";
 export const ENV_API_KEY = "WEBEXTRACT_API_KEY";
 

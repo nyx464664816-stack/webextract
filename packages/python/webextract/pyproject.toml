@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "webextract-sdk"
-version = "0.1.0"
+version = "0.1.1"
 description = "Thin client for the WebExtract API: web page to clean Markdown + fixed-schema JSON for AI agents. Prepaid key, free tier, or pay per call with x402."
 readme = "README.md"
 license = "MIT"

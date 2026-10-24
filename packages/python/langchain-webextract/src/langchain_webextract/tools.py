@@ -28,7 +28,7 @@ class WebExtractInput(BaseModel):
 
 class _WebExtractBaseTool(BaseTool):
     """Shared plumbing. Pass ``client`` (sync) and/or ``async_client``; with neither, a free-tier sync client
-    is created (X-Billing: free, 50 calls/day per IP). For x402 pay-per-call pass
+    is created (X-Billing: free, 20 calls/day per IP). For x402 pay-per-call pass
     ``async_client=AsyncWebExtract(payment_client=x402HttpxClient(...))``."""
 
     model_config = ConfigDict(arbitrary_types_allowed=True)
