@@ -1,12 +1,26 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "dev.webextract/extract",
-  "title": "WebExtract",
   "description": "Web page to clean Markdown or fixed-schema JSON (product/price, tables). Free 20 calls/day.",
+  "title": "WebExtract",
   "version": "1.0.3",
   "websiteUrl": "https://webextract.dev",
   "remotes": [
-    { "type": "streamable-http", "url": "https://api.webextract.dev/mcp",
-      "headers": [{ "name": "Authorization", "description": "Optional: 'Bearer <key>' for prepaid credits (free tier works without it)", "isRequired": false, "isSecret": true }] }
+    {
+      "type": "streamable-http",
+      "url": "https://api.webextract.dev/mcp",
+      "headers": [
+        {
+          "description": "Optional: 'Bearer <key>' for prepaid credits (free tier works without it)",
+          "isSecret": true,
+          "name": "Authorization"
+        },
+        {
+          "description": "Optional alternative to Authorization: your WebExtract API key",
+          "isSecret": true,
+          "name": "x-api-key"
+        }
+      ]
+    }
   ]
 }
