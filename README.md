@@ -2,7 +2,9 @@
 
 # WebExtract
 
-**Web page → clean Markdown + fixed-schema JSON, for AI agents.** One GET request turns any public URL into LLM-ready Markdown plus structured data (article metadata, product/price, tables). Pay per call with **x402 (USDC on Base, Polygon, Arbitrum, Avalanche, OP Mainnet, World Chain or Monad)**, buy prepaid credits with a card (**Stripe**), or use it from any MCP client.
+**Web page → structured JSON (product, tables, metadata) + clean Markdown, for AI agents.** One URL returns product data (name, price, availability), tables with row checks, and article metadata as structured JSON, plus clean Markdown. 20 free calls/day, no signup. Failed REST fetches are not charged. Pay with x402 USDC on 7 chains (REST and hosted MCP) or Stripe credits.
+
+x402 networks: Base, Polygon, Arbitrum, Avalanche, OP Mainnet, World Chain and Monad. Prepaid credits are bought with a card via Stripe. Works from any MCP client.
 
 - Website: https://webextract.dev
 - API base: `https://api.webextract.dev`
@@ -18,7 +20,7 @@
 | GET / POST | `/v1/extract?url=<page>` | Markdown + structured JSON (metadata, product/price, tables) | $0.005 | 1 |
 | GET / POST | `/v1/markdown?url=<page>` | Markdown only | $0.002 | 0.4 |
 | GET | `/v1/balance` | Free calls left today, or prepaid credits left | free | – |
-| POST | `/mcp` | MCP tools `extract_url`, `page_markdown` | – | same as above |
+| POST | `/mcp` | MCP tools `extract_url`, `page_markdown` | same as above, after the free tier | same as above |
 | GET | `/.well-known/x402` | x402 discovery | free | – |
 
 POST takes the same URL as a JSON body: `{"url": "https://..."}`.
@@ -32,7 +34,7 @@ Behaviour:
 ## Pricing
 
 - **Free:** 20 calls/day per IP, no key, no signup. REST: opt in with the header `X-Billing: free` (or `?free=1`). MCP: no header needed.
-- **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed.
+- **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed. Works on the REST endpoints and on the hosted MCP endpoint (after the free tier, see [Use from MCP clients](#use-from-mcp-clients)).
 - **Prepaid packs (card, via Stripe Checkout), from $1:** $1 = 200 credits · $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. `/v1/extract` uses 1 credit, `/v1/markdown` uses 0.4 credit. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
 
 ## Quick start
@@ -125,7 +127,7 @@ console.log(await res.json());
 
 In a browser, https://webextract.dev/try shows your USDC balance on every supported network, lets you pick one, switches your wallet to it and signs the payment.
 
-Payment is only settled when the request succeeds (status < 400).
+REST: payment is only settled when the request succeeds (status < 400).
 
 ### Sandbox (free test money only)
 
@@ -146,7 +148,9 @@ Tools:
 
 Works without a key on the free tier (20 calls/day per IP, no `X-Billing` header needed for MCP). For prepaid credits add header `Authorization: Bearer <key>`.
 
-Both tools declare an `outputSchema` and return `structuredContent`. MCP calls use the free tier or a Bearer key; for pay-per-call without an account use the REST endpoints with x402.
+Both tools declare an `outputSchema` and return `structuredContent`.
+
+**x402 over MCP:** once this IP's free tier is used up, a `tools/call` to `https://api.webextract.dev/mcp` without a Bearer key returns an x402 v2 payment challenge as a tool result (`isError: true`, the payment requirements as JSON in `content[0].text`; same prices, networks and recipient as REST). Retry the same call with the signed payment in `params._meta["x402/payment"]` (the official `@x402/mcp` client does this), or use a prepaid Bearer key. `initialize` and `tools/list` are always free. Calls that reach the server through Smithery's shared free pool do not get an x402 challenge; use your own key there. To test without real money, use the REST [sandbox](#sandbox-free-test-money-only).
 
 Ready-made client configs in [`examples/mcp/`](examples/mcp/):
 

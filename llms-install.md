@@ -10,6 +10,7 @@ WebExtract is a **hosted, remote MCP server**. There is nothing to clone, build,
 - Access:
   - Free tier: **20 calls per day per IP address**, no key and no signup. MCP needs no extra header. (The REST API needs the header `X-Billing: free` for the same free tier; without it REST answers HTTP 402.)
   - Prepaid credits (optional): send the header `Authorization: Bearer <key>`. Keys are sold at https://webextract.dev/#pricing.
+  - Pay per call with x402 (optional, no account): after the free tier, a `tools/call` without a Bearer key returns an x402 payment challenge; an x402-capable MCP client (for example `@x402/mcp`) can pay in USDC and retry. Not available through Smithery's shared free pool.
 - WebExtract respects robots.txt and only fetches public `http(s)` URLs.
 
 ## 1. Add the server
@@ -84,6 +85,6 @@ CLI: `cline mcp add webextract https://api.webextract.dev/mcp --transport http -
 ## 3. Troubleshooting
 
 - **Tools do not appear in Cline**: make sure `"type": "streamableHttp"` is set. If it is omitted, Cline uses SSE, which this server does not provide.
-- **A tool returns `isError` with "Free daily limit reached"**: this IP has used its 20 free calls today. Add a prepaid key in `headers`, or wait for the daily reset. Pay-per-call x402 is available through the REST API (`GET https://api.webextract.dev/v1/extract?url=...`, which answers HTTP 402 with x402 requirements), not through MCP. MCP and REST `X-Billing: free` calls share the same 20/day per-IP counter.
+- **A tool returns `isError` after 20 calls today**: this IP has used its free calls. The result is an x402 payment challenge (payment requirements as JSON in `content[0].text`). Either retry the same call with the payment in `params._meta["x402/payment"]` (an x402-capable MCP client such as `@x402/mcp` does this for you), add a prepaid key in `headers`, or wait for the daily reset. The REST API also takes x402 (`GET https://api.webextract.dev/v1/extract?url=...` answers HTTP 402 with x402 requirements). MCP and REST `X-Billing: free` calls share the same 20/day per-IP counter.
 - **`invalid_api_key`**: the `Authorization` header must be exactly `Bearer <key>`.
 - **robots.txt or private-address errors**: WebExtract only fetches public pages that robots.txt allows. These errors come from the target site and cannot be overridden.
