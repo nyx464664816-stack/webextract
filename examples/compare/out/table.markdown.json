@@ -1,0 +1,10 @@
+{
+  "url": "https://webscraper.io/test-sites/tables",
+  "final_url": "https://webscraper.io/test-sites/tables",
+  "fetched_at": "2026-10-25T22:27:36.967Z",
+  "content_source": "raw_html",
+  "title": "Table Playground | Web Scraper Test Sites",
+  "markdown": "# Test Sites\n\n## Table playground\n\nYou can train using Table selector here.\n\n## Semantically correct table with thead and tbody\n\nTable selector automatically detects header and data rows.\n\n| # | First Name | Last Name | Username |\n| --- | --- | --- | --- |\n| 1 | Mark | Otto | @mdo |\n| 2 | Jacob | Thornton | @fat |\n| 3 | Larry | the Bird | @twitter |\n\n| # | First Name | Last Name | Username |\n| --- | --- | --- | --- |\n| 4 | Harry | Potter | @hp |\n| 5 | John | Snow | @dunno |\n| 6 | Tim | Bean | @timbean |",
+  "markdown_truncated": false,
+  "word_count": 124
+}

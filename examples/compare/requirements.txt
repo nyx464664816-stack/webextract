@@ -1,0 +1,5 @@
+# one file per example; install only what you run
+requests
+langchain-core
+mcp>=2
+x402[evm,httpx]==2.25.0

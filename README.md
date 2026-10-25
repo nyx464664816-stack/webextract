@@ -191,6 +191,7 @@ Listed in the official MCP Registry as `dev.webextract/extract` (see [`server.js
 - [`examples/node/inspect-402.mjs`](examples/node/inspect-402.mjs): decode the 402 with `@x402/core` (`cd examples/node && npm i`)
 - [`examples/node/x402-fetch.mjs`](examples/node/x402-fetch.mjs): pay per call with x402 on the network where your wallet holds USDC (sandbox and dry-run modes)
 - [`examples/mcp/`](examples/mcp/): MCP client configs
+- [`examples/compare/`](examples/compare/): same page through `/v1/markdown` vs `/v1/extract` (structured JSON), with saved real outputs and minimal REST, LangChain, MCP and x402 clients
 
 ## Legal
 
