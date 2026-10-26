@@ -1,0 +1,114 @@
+[
+ {
+  "ts": "2026-10-26T00:55:41Z",
+  "id": "example",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 721,
+  "free_remaining": "11"
+ },
+ {
+  "ts": "2026-10-26T00:55:45Z",
+  "id": "example",
+  "endpoint": "extract",
+  "status": 200,
+  "ms": 718,
+  "free_remaining": "10"
+ },
+ {
+  "ts": "2026-10-26T00:55:50Z",
+  "id": "books-home",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 1874,
+  "free_remaining": "9"
+ },
+ {
+  "ts": "2026-10-26T00:55:54Z",
+  "id": "books-home",
+  "endpoint": "extract",
+  "status": 200,
+  "ms": 1320,
+  "free_remaining": "19"
+ },
+ {
+  "ts": "2026-10-26T00:55:58Z",
+  "id": "books-product",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 998,
+  "free_remaining": "8"
+ },
+ {
+  "ts": "2026-10-26T00:56:02Z",
+  "id": "books-product",
+  "endpoint": "extract",
+  "status": 200,
+  "ms": 995,
+  "free_remaining": "7"
+ },
+ {
+  "ts": "2026-10-26T00:56:07Z",
+  "id": "quotes",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 1584,
+  "free_remaining": "6"
+ },
+ {
+  "ts": "2026-10-26T00:56:11Z",
+  "id": "quotes",
+  "endpoint": "extract",
+  "status": 200,
+  "ms": 990,
+  "free_remaining": "5"
+ },
+ {
+  "ts": "2026-10-26T00:56:16Z",
+  "id": "wsio-tables",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 1685,
+  "free_remaining": "4"
+ },
+ {
+  "ts": "2026-10-26T00:56:19Z",
+  "id": "wsio-tables",
+  "endpoint": "extract",
+  "status": 200,
+  "ms": 361,
+  "free_remaining": "3"
+ },
+ {
+  "ts": "2026-10-26T00:56:24Z",
+  "id": "sts-forms",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 1793,
+  "free_remaining": "2"
+ },
+ {
+  "ts": "2026-10-26T00:56:28Z",
+  "id": "sts-forms",
+  "endpoint": "extract",
+  "status": 200,
+  "ms": 1474,
+  "free_remaining": "1"
+ },
+ {
+  "ts": "2026-10-26T00:56:33Z",
+  "id": "httpbin-html",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 1675,
+  "free_remaining": "0"
+ },
+ {
+  "ts": "2026-10-26T00:56:37Z",
+  "id": "httpbin-html",
+  "endpoint": "extract",
+  "status": 402,
+  "ms": 763,
+  "free_remaining": "0"
+ }
+]

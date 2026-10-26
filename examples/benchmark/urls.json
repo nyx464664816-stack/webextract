@@ -1,0 +1,12 @@
+[
+ {"id":"example",      "url":"https://example.com/",                                                        "kind":"static-article", "robots":"example.com/robots.txt returns an HTML page, no Disallow rules"},
+ {"id":"books-home",   "url":"https://books.toscrape.com/",                                                 "kind":"listing",        "robots":"books.toscrape.com/robots.txt is 404 (no rules); site made for scraping practice"},
+ {"id":"books-product","url":"https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",   "kind":"product",        "robots":"same as above"},
+ {"id":"books-mystery","url":"https://books.toscrape.com/catalogue/category/books/mystery_3/index.html",    "kind":"listing",        "robots":"same as above"},
+ {"id":"quotes",       "url":"https://quotes.toscrape.com/",                                                "kind":"listing",        "robots":"quotes.toscrape.com/robots.txt is 404 (no rules); site made for scraping practice"},
+ {"id":"wsio-product", "url":"https://webscraper.io/test-sites/e-commerce/static/product/50",                "kind":"product",        "robots":"robots.txt Disallows /test-sites/product/, pagination, scroll, load-more; this path is outside those"},
+ {"id":"wsio-tables",  "url":"https://webscraper.io/test-sites/tables",                                     "kind":"table",          "robots":"allowed by webscraper.io/robots.txt"},
+ {"id":"sts-simple",   "url":"https://www.scrapethissite.com/pages/simple/",                                "kind":"listing",        "robots":"robots.txt Disallows /lessons/ and /faq/ only; /pages/ allowed"},
+ {"id":"sts-forms",    "url":"https://www.scrapethissite.com/pages/forms/",                                 "kind":"table",          "robots":"same as above"},
+ {"id":"httpbin-html", "url":"https://httpbin.org/html",                                                    "kind":"static-article", "robots":"httpbin.org/robots.txt Disallows /deny only"}
+]

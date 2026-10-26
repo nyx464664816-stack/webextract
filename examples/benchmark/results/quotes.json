@@ -1,0 +1,442 @@
+[
+ {
+  "endpoint": "markdown",
+  "rep": 1,
+  "status": 402,
+  "ms": 765,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "markdown",
+  "rep": 2,
+  "status": 402,
+  "ms": 731,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "markdown",
+  "rep": 3,
+  "status": 402,
+  "ms": 776,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "markdown",
+  "rep": 4,
+  "status": 402,
+  "ms": 786,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "markdown",
+  "rep": 5,
+  "status": 402,
+  "ms": 709,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "2000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "extract",
+  "rep": 1,
+  "status": 402,
+  "ms": 324,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "extract",
+  "rep": 2,
+  "status": 402,
+  "ms": 765,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "extract",
+  "rep": 3,
+  "status": 402,
+  "ms": 794,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "extract",
+  "rep": 4,
+  "status": 402,
+  "ms": 803,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   }
+  ]
+ },
+ {
+  "endpoint": "extract",
+  "rep": 5,
+  "status": 402,
+  "ms": 335,
+  "x402Version": 2,
+  "options": [
+   {
+    "network": "eip155:8453",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:137",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:42161",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:43114",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:10",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:480",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   },
+   {
+    "network": "eip155:143",
+    "amount_atomic": "5000",
+    "scheme": "exact"
+   }
+  ]
+ }
+]

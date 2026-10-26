@@ -1,0 +1,119 @@
+{
+ "example": {
+  "status": 200,
+  "title": "Example Domain",
+  "h1": null,
+  "tables": [],
+  "p_longest": "This domain is for use in documentation examples w"
+ },
+ "books-home": {
+  "status": 200,
+  "title": "All products | Books to Scrape - Sandbox",
+  "h1": "All products",
+  "tables": [],
+  "p_longest": null
+ },
+ "books-product": {
+  "status": 200,
+  "title": "A Light in the Attic | Books to Scrape - Sandbox",
+  "h1": "A Light in the Attic",
+  "tables": [
+   {
+    "rows": 7,
+    "cells": [
+     "a897fe39b1053632",
+     "Books"
+    ]
+   }
+  ],
+  "p_longest": "It's hard to imagine a world without A Light in th",
+  "product_name": "A Light in the Attic",
+  "price": 51.77
+ },
+ "books-mystery": {
+  "status": 200,
+  "title": "Mystery | Books to Scrape - Sandbox",
+  "h1": "Mystery",
+  "tables": [],
+  "p_longest": null
+ },
+ "quotes": {
+  "status": 200,
+  "title": "Quotes to Scrape",
+  "h1": "Quotes to Scrape",
+  "tables": [],
+  "p_longest": null
+ },
+ "wsio-product": {
+  "status": 200,
+  "title": "Web Scraper Cloud | Enterprise Web Scraping Platform",
+  "h1": "Test Sites",
+  "tables": [],
+  "p_longest": "Asus VivoBook S14 (S406UA-BV041T) Starry Grey, 14\"",
+  "product_name": "Asus VivoBook S14",
+  "price": 729.0
+ },
+ "wsio-tables": {
+  "status": 200,
+  "title": "Table Playground | Web Scraper Test Sites",
+  "h1": "Test Sites",
+  "tables": [
+   {
+    "rows": 3,
+    "cells": [
+     "1",
+     "Mark",
+     "Otto",
+     "@mdo",
+     "2",
+     "Jacob"
+    ]
+   },
+   {
+    "rows": 3,
+    "cells": [
+     "4",
+     "Harry",
+     "Potter",
+     "@hp",
+     "5",
+     "John"
+    ]
+   }
+  ],
+  "p_longest": "Table selector automatically detects header and da"
+ },
+ "sts-simple": {
+  "status": 200,
+  "title": "Countries of the World: A Simple Example | Scrape This Site | A public sandbox for learning web scraping",
+  "h1": "Countries of the World: A Simple Example 250 items",
+  "tables": [],
+  "p_longest": "A single page that lists information about all the"
+ },
+ "sts-forms": {
+  "status": 200,
+  "title": "Hockey Teams: Forms, Searching and Pagination | Scrape This Site | A public sandbox for learning web scraping",
+  "h1": "Hockey Teams: Forms, Searching and Pagination 25 items",
+  "tables": [
+   {
+    "rows": 25,
+    "cells": [
+     "Boston Bruins",
+     "1990",
+     "44",
+     "24",
+     "",
+     "0.55"
+    ]
+   }
+  ],
+  "p_longest": "Browse through a database of NHL team stats since "
+ },
+ "httpbin-html": {
+  "status": 200,
+  "title": null,
+  "h1": "Herman Melville - Moby-Dick",
+  "tables": [],
+  "p_longest": "Availing himself of the mild, summer-cool weather "
+ }
+}

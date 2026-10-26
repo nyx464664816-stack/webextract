@@ -1,0 +1,1065 @@
+{
+ "generated": "2026-10-26T00:56:57Z",
+ "sandbox": {
+  "markdown": {
+   "runs": 40,
+   "success": 38,
+   "success_rate": 0.95,
+   "n": 38,
+   "median_ms": 3130,
+   "p95_ms": 5605,
+   "min_ms": 2000,
+   "max_ms": 6374,
+   "checks_passed": 75,
+   "checks_total": 75,
+   "completeness": 1.0,
+   "runs_with_all_checks_passing": 38,
+   "problems": [
+    [
+     "httpbin-html:HTTP 422  {\"error\":\"upstream_error\",\"message\":\"target site returned HTTP 502; no",
+     1
+    ],
+    [
+     "sts-forms:HTTP 402  {\"error\":\"payment_required\",\"reason\":\"settlement_failed\",\"message\":\"Pa",
+     1
+    ]
+   ]
+  },
+  "extract": {
+   "runs": 40,
+   "success": 40,
+   "success_rate": 1.0,
+   "n": 40,
+   "median_ms": 3041,
+   "p95_ms": 4231,
+   "min_ms": 1541,
+   "max_ms": 5658,
+   "checks_passed": 212,
+   "checks_total": 212,
+   "completeness": 1.0,
+   "runs_with_all_checks_passing": 40,
+   "problems": []
+  }
+ },
+ "per_url": {
+  "example": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3702,
+    "p95_ms": 5154,
+    "min_ms": 2115,
+    "max_ms": 5154
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2412,
+    "p95_ms": 4364,
+    "min_ms": 1787,
+    "max_ms": 4364
+   }
+  },
+  "books-home": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3264,
+    "p95_ms": 3724,
+    "min_ms": 2869,
+    "max_ms": 3724
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3342,
+    "p95_ms": 3665,
+    "min_ms": 2497,
+    "max_ms": 3665
+   }
+  },
+  "books-product": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3070,
+    "p95_ms": 4960,
+    "min_ms": 2000,
+    "max_ms": 4960
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2616,
+    "p95_ms": 3221,
+    "min_ms": 1916,
+    "max_ms": 3221
+   }
+  },
+  "books-mystery": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3376,
+    "p95_ms": 4971,
+    "min_ms": 2864,
+    "max_ms": 4971
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3382,
+    "p95_ms": 3542,
+    "min_ms": 3207,
+    "max_ms": 3542
+   }
+  },
+  "quotes": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2794,
+    "p95_ms": 2913,
+    "min_ms": 2736,
+    "max_ms": 2913
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3276,
+    "p95_ms": 5658,
+    "min_ms": 1862,
+    "max_ms": 5658
+   }
+  },
+  "wsio-product": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2860,
+    "p95_ms": 4192,
+    "min_ms": 2244,
+    "max_ms": 4192
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2228,
+    "p95_ms": 2581,
+    "min_ms": 1998,
+    "max_ms": 2581
+   }
+  },
+  "wsio-tables": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2966,
+    "p95_ms": 5605,
+    "min_ms": 2076,
+    "max_ms": 5605
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 2198,
+    "p95_ms": 2597,
+    "min_ms": 1541,
+    "max_ms": 2597
+   }
+  },
+  "sts-simple": {
+   "markdown": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 4350,
+    "p95_ms": 6374,
+    "min_ms": 3718,
+    "max_ms": 6374
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 4029,
+    "p95_ms": 4231,
+    "min_ms": 3336,
+    "max_ms": 4231
+   }
+  },
+  "sts-forms": {
+   "markdown": {
+    "runs": 4,
+    "ok": 3,
+    "n": 3,
+    "median_ms": 3304,
+    "p95_ms": 3432,
+    "min_ms": 2991,
+    "max_ms": 3432
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3586,
+    "p95_ms": 3811,
+    "min_ms": 2411,
+    "max_ms": 3811
+   }
+  },
+  "httpbin-html": {
+   "markdown": {
+    "runs": 4,
+    "ok": 3,
+    "n": 3,
+    "median_ms": 3239,
+    "p95_ms": 3558,
+    "min_ms": 3020,
+    "max_ms": 3558
+   },
+   "extract": {
+    "runs": 4,
+    "ok": 4,
+    "n": 4,
+    "median_ms": 3041,
+    "p95_ms": 3100,
+    "min_ms": 2950,
+    "max_ms": 3100
+   }
+  }
+ },
+ "quotes": [
+  {
+   "endpoint": "markdown",
+   "rep": 1,
+   "status": 402,
+   "ms": 765,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "markdown",
+   "rep": 2,
+   "status": 402,
+   "ms": 731,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "markdown",
+   "rep": 3,
+   "status": 402,
+   "ms": 776,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "markdown",
+   "rep": 4,
+   "status": 402,
+   "ms": 786,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "markdown",
+   "rep": 5,
+   "status": 402,
+   "ms": 709,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "2000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "extract",
+   "rep": 1,
+   "status": 402,
+   "ms": 324,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "extract",
+   "rep": 2,
+   "status": 402,
+   "ms": 765,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "extract",
+   "rep": 3,
+   "status": 402,
+   "ms": 794,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "extract",
+   "rep": 4,
+   "status": 402,
+   "ms": 803,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    }
+   ]
+  },
+  {
+   "endpoint": "extract",
+   "rep": 5,
+   "status": 402,
+   "ms": 335,
+   "x402Version": 2,
+   "options": [
+    {
+     "network": "eip155:8453",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:137",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:42161",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:43114",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:10",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:480",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    },
+    {
+     "network": "eip155:143",
+     "amount_atomic": "5000",
+     "scheme": "exact"
+    }
+   ]
+  }
+ ],
+ "failures": {
+  "cases": [
+   {
+    "case": "http-404",
+    "url": "https://books.toscrape.com/catalogue/this-page-does-not-exist_0/index.html",
+    "endpoint": "markdown",
+    "status": 422,
+    "ms": 2149,
+    "settlement_reported": false,
+    "error": "upstream_error",
+    "message": "target site returned HTTP 404; not charged"
+   },
+   {
+    "case": "http-404",
+    "url": "https://books.toscrape.com/catalogue/this-page-does-not-exist_0/index.html",
+    "endpoint": "extract",
+    "status": 422,
+    "ms": 2020,
+    "settlement_reported": false,
+    "error": "upstream_error",
+    "message": "target site returned HTTP 404; not charged"
+   },
+   {
+    "case": "dns-failure",
+    "url": "https://no-such-host.webextract-benchmark.invalid/",
+    "endpoint": "markdown",
+    "status": 422,
+    "ms": 1425,
+    "settlement_reported": false,
+    "error": "dns_failed",
+    "message": "DNS lookup failed"
+   },
+   {
+    "case": "dns-failure",
+    "url": "https://no-such-host.webextract-benchmark.invalid/",
+    "endpoint": "extract",
+    "status": 422,
+    "ms": 1412,
+    "settlement_reported": false,
+    "error": "dns_failed",
+    "message": "DNS lookup failed"
+   },
+   {
+    "case": "not-html-png",
+    "url": "https://httpbin.org/image/png",
+    "endpoint": "markdown",
+    "status": 415,
+    "ms": 2301,
+    "settlement_reported": false,
+    "error": "unsupported_type",
+    "message": "unsupported content type: image/png; not charged"
+   },
+   {
+    "case": "not-html-png",
+    "url": "https://httpbin.org/image/png",
+    "endpoint": "extract",
+    "status": 415,
+    "ms": 2249,
+    "settlement_reported": false,
+    "error": "unsupported_type",
+    "message": "unsupported content type: image/png; not charged"
+   },
+   {
+    "case": "private-127.0.0.1",
+    "url": "http://127.0.0.1/",
+    "endpoint": "markdown",
+    "status": 400,
+    "ms": 1470,
+    "settlement_reported": false,
+    "error": "forbidden_host",
+    "message": "private/internal addresses are not allowed"
+   },
+   {
+    "case": "private-127.0.0.1",
+    "url": "http://127.0.0.1/",
+    "endpoint": "extract",
+    "status": 400,
+    "ms": 977,
+    "settlement_reported": false,
+    "error": "forbidden_host",
+    "message": "private/internal addresses are not allowed"
+   },
+   {
+    "case": "private-10.0.0.1",
+    "url": "http://10.0.0.1/",
+    "endpoint": "markdown",
+    "status": 400,
+    "ms": 1517,
+    "settlement_reported": false,
+    "error": "forbidden_host",
+    "message": "private/internal addresses are not allowed"
+   },
+   {
+    "case": "private-10.0.0.1",
+    "url": "http://10.0.0.1/",
+    "endpoint": "extract",
+    "status": 400,
+    "ms": 1333,
+    "settlement_reported": false,
+    "error": "forbidden_host",
+    "message": "private/internal addresses are not allowed"
+   }
+  ],
+  "balance_before_atomic": 18904000,
+  "balance_after_failures_atomic": 18904000,
+  "control": {
+   "url": "https://example.com/",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 2935,
+   "settlement_reported": true,
+   "error": null,
+   "message": ""
+  },
+  "balance_after_control_atomic": 18902000,
+  "failures_charged_atomic": 0,
+  "control_charged_atomic": 2000
+ },
+ "live_free": [
+  {
+   "ts": "2026-10-26T00:55:41Z",
+   "id": "example",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 721,
+   "free_remaining": "11"
+  },
+  {
+   "ts": "2026-10-26T00:55:45Z",
+   "id": "example",
+   "endpoint": "extract",
+   "status": 200,
+   "ms": 718,
+   "free_remaining": "10"
+  },
+  {
+   "ts": "2026-10-26T00:55:50Z",
+   "id": "books-home",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 1874,
+   "free_remaining": "9"
+  },
+  {
+   "ts": "2026-10-26T00:55:54Z",
+   "id": "books-home",
+   "endpoint": "extract",
+   "status": 200,
+   "ms": 1320,
+   "free_remaining": "19"
+  },
+  {
+   "ts": "2026-10-26T00:55:58Z",
+   "id": "books-product",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 998,
+   "free_remaining": "8"
+  },
+  {
+   "ts": "2026-10-26T00:56:02Z",
+   "id": "books-product",
+   "endpoint": "extract",
+   "status": 200,
+   "ms": 995,
+   "free_remaining": "7"
+  },
+  {
+   "ts": "2026-10-26T00:56:07Z",
+   "id": "quotes",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 1584,
+   "free_remaining": "6"
+  },
+  {
+   "ts": "2026-10-26T00:56:11Z",
+   "id": "quotes",
+   "endpoint": "extract",
+   "status": 200,
+   "ms": 990,
+   "free_remaining": "5"
+  },
+  {
+   "ts": "2026-10-26T00:56:16Z",
+   "id": "wsio-tables",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 1685,
+   "free_remaining": "4"
+  },
+  {
+   "ts": "2026-10-26T00:56:19Z",
+   "id": "wsio-tables",
+   "endpoint": "extract",
+   "status": 200,
+   "ms": 361,
+   "free_remaining": "3"
+  },
+  {
+   "ts": "2026-10-26T00:56:24Z",
+   "id": "sts-forms",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 1793,
+   "free_remaining": "2"
+  },
+  {
+   "ts": "2026-10-26T00:56:28Z",
+   "id": "sts-forms",
+   "endpoint": "extract",
+   "status": 200,
+   "ms": 1474,
+   "free_remaining": "1"
+  },
+  {
+   "ts": "2026-10-26T00:56:33Z",
+   "id": "httpbin-html",
+   "endpoint": "markdown",
+   "status": 200,
+   "ms": 1675,
+   "free_remaining": "0"
+  },
+  {
+   "ts": "2026-10-26T00:56:37Z",
+   "id": "httpbin-html",
+   "endpoint": "extract",
+   "status": 402,
+   "ms": 763,
+   "free_remaining": "0"
+  }
+ ],
+ "quotes_summary": {
+  "markdown": {
+   "n": 5,
+   "median_ms": 765,
+   "p95_ms": 786,
+   "min_ms": 709,
+   "max_ms": 786,
+   "statuses": [
+    402
+   ]
+  },
+  "extract": {
+   "n": 5,
+   "median_ms": 765,
+   "p95_ms": 803,
+   "min_ms": 324,
+   "max_ms": 803,
+   "statuses": [
+    402
+   ]
+  }
+ },
+ "live_free_summary": {
+  "calls": 14,
+  "ok_200": 13,
+  "statuses": {
+   "200": 13,
+   "402": 1
+  },
+  "latency": {
+   "markdown": {
+    "n": 7,
+    "median_ms": 1675,
+    "p95_ms": 1874,
+    "min_ms": 721,
+    "max_ms": 1874
+   },
+   "extract": {
+    "n": 6,
+    "median_ms": 992,
+    "p95_ms": 1474,
+    "min_ms": 361,
+    "max_ms": 1474
+   }
+  },
+  "per_call": [
+   {
+    "id": "example",
+    "endpoint": "markdown",
+    "checks_passed": 1,
+    "checks_total": 1,
+    "markdown_identical": true
+   },
+   {
+    "id": "example",
+    "endpoint": "extract",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "markdown_identical": true,
+    "json_identical_except_fetched_at": true
+   },
+   {
+    "id": "books-home",
+    "endpoint": "markdown",
+    "checks_passed": 1,
+    "checks_total": 1,
+    "markdown_identical": true
+   },
+   {
+    "id": "books-home",
+    "endpoint": "extract",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "markdown_identical": true,
+    "json_identical_except_fetched_at": true
+   },
+   {
+    "id": "books-product",
+    "endpoint": "markdown",
+    "checks_passed": 3,
+    "checks_total": 3,
+    "markdown_identical": true
+   },
+   {
+    "id": "books-product",
+    "endpoint": "extract",
+    "checks_passed": 8,
+    "checks_total": 8,
+    "markdown_identical": true,
+    "json_identical_except_fetched_at": true
+   },
+   {
+    "id": "quotes",
+    "endpoint": "markdown",
+    "checks_passed": 1,
+    "checks_total": 1,
+    "markdown_identical": true
+   },
+   {
+    "id": "quotes",
+    "endpoint": "extract",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "markdown_identical": true,
+    "json_identical_except_fetched_at": true
+   },
+   {
+    "id": "wsio-tables",
+    "endpoint": "markdown",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "markdown_identical": true
+   },
+   {
+    "id": "wsio-tables",
+    "endpoint": "extract",
+    "checks_passed": 7,
+    "checks_total": 7,
+    "markdown_identical": true,
+    "json_identical_except_fetched_at": true
+   },
+   {
+    "id": "sts-forms",
+    "endpoint": "markdown",
+    "checks_passed": 3,
+    "checks_total": 3,
+    "markdown_identical": true
+   },
+   {
+    "id": "sts-forms",
+    "endpoint": "extract",
+    "checks_passed": 6,
+    "checks_total": 6,
+    "markdown_identical": true,
+    "json_identical_except_fetched_at": true
+   },
+   {
+    "id": "httpbin-html",
+    "endpoint": "markdown",
+    "checks_passed": 2,
+    "checks_total": 2,
+    "markdown_identical": true
+   }
+  ]
+ }
+}

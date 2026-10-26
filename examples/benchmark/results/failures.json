@@ -1,0 +1,118 @@
+{
+ "cases": [
+  {
+   "case": "http-404",
+   "url": "https://books.toscrape.com/catalogue/this-page-does-not-exist_0/index.html",
+   "endpoint": "markdown",
+   "status": 422,
+   "ms": 2149,
+   "settlement_reported": false,
+   "error": "upstream_error",
+   "message": "target site returned HTTP 404; not charged"
+  },
+  {
+   "case": "http-404",
+   "url": "https://books.toscrape.com/catalogue/this-page-does-not-exist_0/index.html",
+   "endpoint": "extract",
+   "status": 422,
+   "ms": 2020,
+   "settlement_reported": false,
+   "error": "upstream_error",
+   "message": "target site returned HTTP 404; not charged"
+  },
+  {
+   "case": "dns-failure",
+   "url": "https://no-such-host.webextract-benchmark.invalid/",
+   "endpoint": "markdown",
+   "status": 422,
+   "ms": 1425,
+   "settlement_reported": false,
+   "error": "dns_failed",
+   "message": "DNS lookup failed"
+  },
+  {
+   "case": "dns-failure",
+   "url": "https://no-such-host.webextract-benchmark.invalid/",
+   "endpoint": "extract",
+   "status": 422,
+   "ms": 1412,
+   "settlement_reported": false,
+   "error": "dns_failed",
+   "message": "DNS lookup failed"
+  },
+  {
+   "case": "not-html-png",
+   "url": "https://httpbin.org/image/png",
+   "endpoint": "markdown",
+   "status": 415,
+   "ms": 2301,
+   "settlement_reported": false,
+   "error": "unsupported_type",
+   "message": "unsupported content type: image/png; not charged"
+  },
+  {
+   "case": "not-html-png",
+   "url": "https://httpbin.org/image/png",
+   "endpoint": "extract",
+   "status": 415,
+   "ms": 2249,
+   "settlement_reported": false,
+   "error": "unsupported_type",
+   "message": "unsupported content type: image/png; not charged"
+  },
+  {
+   "case": "private-127.0.0.1",
+   "url": "http://127.0.0.1/",
+   "endpoint": "markdown",
+   "status": 400,
+   "ms": 1470,
+   "settlement_reported": false,
+   "error": "forbidden_host",
+   "message": "private/internal addresses are not allowed"
+  },
+  {
+   "case": "private-127.0.0.1",
+   "url": "http://127.0.0.1/",
+   "endpoint": "extract",
+   "status": 400,
+   "ms": 977,
+   "settlement_reported": false,
+   "error": "forbidden_host",
+   "message": "private/internal addresses are not allowed"
+  },
+  {
+   "case": "private-10.0.0.1",
+   "url": "http://10.0.0.1/",
+   "endpoint": "markdown",
+   "status": 400,
+   "ms": 1517,
+   "settlement_reported": false,
+   "error": "forbidden_host",
+   "message": "private/internal addresses are not allowed"
+  },
+  {
+   "case": "private-10.0.0.1",
+   "url": "http://10.0.0.1/",
+   "endpoint": "extract",
+   "status": 400,
+   "ms": 1333,
+   "settlement_reported": false,
+   "error": "forbidden_host",
+   "message": "private/internal addresses are not allowed"
+  }
+ ],
+ "balance_before_atomic": 18904000,
+ "balance_after_failures_atomic": 18904000,
+ "control": {
+  "url": "https://example.com/",
+  "endpoint": "markdown",
+  "status": 200,
+  "ms": 2935,
+  "settlement_reported": true,
+  "error": null,
+  "message": ""
+ },
+ "balance_after_control_atomic": 18902000,
+ "failures_charged_atomic": 0,
+ "control_charged_atomic": 2000
+}
