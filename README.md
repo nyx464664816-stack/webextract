@@ -37,6 +37,15 @@ Behaviour:
 - **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed. Works on the REST endpoints and on the hosted MCP endpoint (after the free tier, see [Use from MCP clients](#use-from-mcp-clients)).
 - **Prepaid packs (card, via Stripe Checkout), from $1:** $1 = 200 credits · $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. `/v1/extract` uses 1 credit, `/v1/markdown` uses 0.4 credit. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
 
+## Measured results
+
+We ran WebExtract on 10 public pages and published the raw files and scripts: <https://webextract.dev/benchmark> · [`examples/benchmark`](examples/benchmark).
+
+- Sandbox (Base Sepolia test USDC), 4 runs per page and endpoint, 80 calls: `/v1/markdown` 38/40 succeeded (95.0%), `/v1/extract` 40/40 (100.0%). Field checks passed: 75/75 and 212/212. The two failures are counted in the rate.
+- Failed fetches on the sandbox route: 10 calls that must fail, wallet balance 18.904000 USDC before and after (control call: 0.002000 USDC). We did not run failing URLs through the paid live path.
+- The sandbox and `/v1` run in the same server process and call the same extraction function; only the payment step differs.
+- Limits: one client, one day, 10 pages that are easy to fetch. No competitor was run; no mainnet payment and no payment through MCP was tested.
+
 ## Quick start
 
 ```sh
