@@ -238,6 +238,8 @@ Behavior changes to the hosted service are listed in [CHANGELOG.md](CHANGELOG.md
 
 ## Legal
 
+Operated by TAINCHENG, L.L.C. (United States).
+
 [Terms](https://webextract.dev/terms) · [Privacy](https://webextract.dev/privacy) · [Refunds](https://webextract.dev/refunds) · Contact: [removed]
 
 ## License
