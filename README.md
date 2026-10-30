@@ -2,7 +2,7 @@
 
 # WebExtract
 
-**Web page → structured JSON (product, tables, metadata) + clean Markdown, for AI agents.** One URL returns product data (name, price, availability), tables with row checks, and article metadata as structured JSON, plus clean Markdown. 20 free calls/day, no signup. Failed REST fetches are not charged. Pay with x402 USDC on 7 chains (REST and hosted MCP) or Stripe credits.
+**Web page → structured JSON (product, tables, metadata) + clean Markdown, for AI agents.** One URL returns product data (name, price, availability), tables with row checks, and article metadata as structured JSON, plus clean Markdown. 20 free calls/day, no signup. Failed REST fetches are not charged. Pay per call with x402 USDC on 7 chains over REST, or use Stripe prepaid credits (REST and MCP).
 
 x402 networks: Base, Polygon, Arbitrum, Avalanche, OP Mainnet, World Chain and Monad. Prepaid credits are bought with a card via Stripe. Works from any MCP client.
 
@@ -20,7 +20,7 @@ x402 networks: Base, Polygon, Arbitrum, Avalanche, OP Mainnet, World Chain and M
 | GET / POST | `/v1/extract?url=<page>` | Markdown + structured JSON (metadata, product/price, tables) | $0.005 | 1 |
 | GET / POST | `/v1/markdown?url=<page>` | Markdown only | $0.002 | 0.4 |
 | GET | `/v1/balance` | Free calls left today, or prepaid credits left | free | – |
-| POST | `/mcp` | MCP tools `extract_url`, `page_markdown` | same as above, after the free tier | same as above |
+| POST | `/mcp` | MCP tools `extract_url`, `page_markdown` | use the REST endpoints (not tested over MCP) | same as above, after the free tier |
 | GET | `/.well-known/x402` | x402 discovery | free | – |
 
 POST takes the same URL as a JSON body: `{"url": "https://..."}`.
@@ -34,7 +34,7 @@ Behaviour:
 ## Pricing
 
 - **Free:** 20 calls/day per IP, no key, no signup. REST: opt in with the header `X-Billing: free` (or `?free=1`). MCP: no header needed.
-- **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed. Works on the REST endpoints and on the hosted MCP endpoint (after the free tier, see [Use from MCP clients](#use-from-mcp-clients)).
+- **x402 pay-per-call:** $0.005 (`/v1/extract`) / $0.002 (`/v1/markdown`) in USDC on any supported network (below). No account, no gas needed. Works on the REST endpoints. Over MCP, use the free tier or a prepaid key (see [Use from MCP clients](#use-from-mcp-clients)).
 - **Prepaid packs (card, via Stripe Checkout), from $1:** $1 = 200 credits · $5 = 1,000 credits · $20 = 5,000 credits · $50 = 15,000 credits. `/v1/extract` uses 1 credit, `/v1/markdown` uses 0.4 credit. **Credits never expire.** Buy at https://webextract.dev/#pricing; the API key is shown once on the success page.
 
 ## Measured results
@@ -159,7 +159,7 @@ Works without a key on the free tier (20 calls/day per IP, no `X-Billing` header
 
 Both tools declare an `outputSchema` and return `structuredContent`.
 
-**x402 over MCP:** once this IP's free tier is used up, a `tools/call` to `https://api.webextract.dev/mcp` without a Bearer key returns an x402 v2 payment challenge as a tool result (`isError: true`, the payment requirements as JSON in `content[0].text`; same prices, networks and recipient as REST). Retry the same call with the signed payment in `params._meta["x402/payment"]` (the official `@x402/mcp` client does this), or use a prepaid Bearer key. `initialize` and `tools/list` are always free. Calls that reach the server through Smithery's shared free pool do not get an x402 challenge; use your own key there. To test without real money, use the REST [sandbox](#sandbox-free-test-money-only).
+**After the free tier over MCP:** once this IP's 20 free calls are used up, a `tools/call` without a Bearer key returns an error result (`isError: true`) whose text carries the payment requirements as JSON. Paying x402 through MCP has not been tested; add a prepaid key (`Authorization: Bearer <key>`), wait for the daily reset, or use the REST endpoints for x402 pay-per-call. `initialize` and `tools/list` are always free. Calls that reach the server through Smithery's shared free pool use your own key there. To test x402 without real money, use the REST [sandbox](#sandbox-free-test-money-only).
 
 Ready-made client configs in [`examples/mcp/`](examples/mcp/):
 
