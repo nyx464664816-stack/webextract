@@ -13,6 +13,36 @@ x402 networks: Base, Polygon, Arbitrum, Avalanche, OP Mainnet, World Chain and M
 - Docs: https://webextract.dev/docs
 - Try a paid x402 call in your browser wallet: https://webextract.dev/try
 
+## Example output
+
+`GET /v1/extract?url=https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html` (a practice product page made for scraping). Real response saved on 2026-10-25, trimmed here to a few fields; the full files are in [`examples/compare/out`](examples/compare/out).
+
+```json
+{
+  "url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
+  "content_source": "raw_html",
+  "word_count": 261,
+  "product": {
+    "name": "A Light in the Attic",
+    "price": 51.77,
+    "currency": "GBP",
+    "availability": "InStock",
+    "rating": { "value": 3, "count": null },
+    "source": "heuristic",
+    "price_detail": { "warnings": ["heuristic_price_low_confidence", "currency_inferred_from_symbol"] }
+  },
+  "tables": [
+    {
+      "headers": ["col_1", "col_2"],
+      "rows": [["UPC", "a897fe39b1053632"], ["Product Type", "Books"]],
+      "checks": { "row_count": 7, "column_count": 2, "consistent_width": true }
+    }
+  ]
+}
+```
+
+The response also carries `markdown` (the page as clean Markdown) and `metadata`. The `warnings` show that the price came from a heuristic, not from structured markup on the page. A page that is not a product page returns `"product": null` instead of a guess. See [`examples/compare`](examples/compare/) for a table page and for how `/v1/markdown` differs.
+
 ## Endpoints
 
 | Method | Path | Returns | x402 price | Credits |
@@ -201,6 +231,10 @@ Listed in the official MCP Registry as `dev.webextract/extract` (see [`server.js
 - [`examples/node/x402-fetch.mjs`](examples/node/x402-fetch.mjs): pay per call with x402 on the network where your wallet holds USDC (sandbox and dry-run modes)
 - [`examples/mcp/`](examples/mcp/): MCP client configs
 - [`examples/compare/`](examples/compare/): same page through `/v1/markdown` vs `/v1/extract` (structured JSON), with saved real outputs and minimal REST, LangChain, MCP and x402 clients
+
+## Changes
+
+Behavior changes to the hosted service are listed in [CHANGELOG.md](CHANGELOG.md).
 
 ## Legal
 
