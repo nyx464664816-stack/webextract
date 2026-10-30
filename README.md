@@ -240,7 +240,7 @@ Behavior changes to the hosted service are listed in [CHANGELOG.md](CHANGELOG.md
 
 Operated by TAINCHENG, L.L.C. (a Delaware limited liability company, United States).
 
-[Terms](https://webextract.dev/terms) · [Privacy](https://webextract.dev/privacy) · [Refunds](https://webextract.dev/refunds) · Contact: [removed]
+[Terms](https://webextract.dev/terms) · [Privacy](https://webextract.dev/privacy) · [Refunds](https://webextract.dev/refunds) · Contact: [webextract.dev](https://webextract.dev) or [GitHub Issues](https://github.com/nyx464664816-stack/webextract/issues)
 
 ## License
 
