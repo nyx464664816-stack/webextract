@@ -2,6 +2,21 @@
 
 Behavior changes to the hosted service at `api.webextract.dev` (REST and MCP). Newest first.
 
+## 2026-10-30
+
+### Empty-page hint no longer points to the render endpoint
+- The `hint` on a 200 response with `warnings: ["empty_content"]` now says the page may build its content with JavaScript and suggests trying a URL that shows the content directly in the page source. It no longer links to a render endpoint. Billing is unchanged from 2026-10-27: free and prepaid calls are not charged, paid x402 calls are charged.
+
+### MCP: clearer tool errors for bad arguments
+- A missing `url` (no `arguments`, empty `arguments`, or an empty `url`) returns the same first text block as before plus a second text block with JSON: `error`, `category`, `charged`, `reason`, `retryable`, `example`.
+- If `arguments` is a string, array or number, or `url` is not a string, the error is now `invalid_arguments` instead of a missing-url message.
+- `invalid_url` and `forbidden_host` errors now include `retryable: false`.
+- These errors are returned before any payment or free-quota use.
+
+### Docs and error text
+- Invalid-URL errors (REST `reason` and the first MCP text block) now show a full example address, e.g. `https://example.com/page`, and `llms.txt` has a shorter note about the render endpoint being unavailable.
+- The `/try` page now explains x402, facilitator, EIP-3009 and gas in one sentence each.
+
 ## 2026-10-27
 
 ### Clearer errors when a fetch fails
