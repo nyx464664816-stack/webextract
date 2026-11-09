@@ -5,6 +5,27 @@
   "title": "WebExtract",
   "version": "1.0.4",
   "websiteUrl": "https://webextract.dev",
+  "icons": [
+    {
+      "src": "https://webextract.dev/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    },
+    {
+      "src": "https://webextract.dev/apple-touch-icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "180x180"
+      ]
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/nyx464664816-stack/webextract",
+    "source": "github",
+    "id": "1428124764"
+  },
   "remotes": [
     {
       "type": "streamable-http",
